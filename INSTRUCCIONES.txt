@@ -1,0 +1,93 @@
+
+# Instrucciones de Instalación y Uso - Panel Multi-Post
+
+¡Gracias por adquirir nuestro software! Esta guía te ayudará a instalar y ejecutar la aplicación en tu propia computadora.
+
+---
+
+### **1. Prerrequisitos**
+
+Antes de empezar, asegúrate de tener instalado **Node.js**. Esta aplicación lo necesita para funcionar.
+
+- **¿Cómo instalar Node.js?**
+  - Ve a la página oficial: https://nodejs.org/
+  - Descarga la versión **LTS** (Recomendada para la mayoría de los usuarios) e instálala como cualquier otro programa.
+  - Para verificar que se instaló correctamente, abre una terminal o símbolo del sistema y escribe: `node -v`. Deberías ver un número de versión.
+
+---
+
+### **2. Instalación del Proyecto**
+
+Sigue estos pasos en orden:
+
+**A. Instalar el Backend (el cerebro de la aplicación):**
+
+1.  Descomprime la carpeta del proyecto que descargaste.
+2.  Abre una terminal o ventana de comandos.
+3.  Navega hasta la carpeta `backend` que está dentro del proyecto. Ejemplo: `cd ruta/a/tu/proyecto/backend`
+4.  Una vez dentro de la carpeta `backend`, ejecuta el siguiente comando para instalar sus dependencias:
+    ```
+    npm install
+    ```
+
+**B. Instalar el Frontend (la interfaz que tú ves):**
+
+1.  Abre **una nueva terminal** (mantén la anterior abierta).
+2.  Navega hasta la carpeta `frontend`. Ejemplo: `cd ruta/a/tu/proyecto/frontend`
+3.  Una vez dentro de la carpeta `frontend`, ejecuta el comando:
+    ```
+    npm install
+    ```
+
+¡La instalación está completa! Ahora solo falta ejecutar la aplicación.
+
+---
+
+### **3. Ejecutar la Aplicación**
+
+Necesitas tener dos terminales abiertas simultáneamente.
+
+**A. Iniciar el Backend:**
+
+1.  En la terminal que está en la carpeta `backend`, ejecuta el siguiente comando:
+    ```
+    npm start
+    ```
+2.  Verás un mensaje que dice `Backend server is running...`. ¡No cierres esta terminal! Debe permanecer abierta para que la aplicación funcione.
+
+**B. Iniciar el Frontend:**
+
+1.  En la segunda terminal, la que está en la carpeta `frontend`, ejecuta el comando:
+    ```
+    npm run dev
+    ```
+2.  La terminal te mostrará una dirección local. Generalmente es `http://localhost:5173`.
+
+**C. Acceder a la Aplicación:**
+
+1.  Abre tu navegador web (Chrome, Firefox, etc.).
+2.  Visita la dirección que te dio el frontend: **http://localhost:5173**
+3.  ¡Listo! Ya puedes registrarte y usar el panel.
+
+---
+
+### **4. Configuración de Seguridad (Recomendado)**
+
+Dentro de la carpeta `backend`, hay un archivo llamado `.env`. Contiene una clave secreta.
+
+```
+JWT_SECRET=ESTA_ES_UNA_CLAVE_SECRETA_CAMBIAME
+```
+
+Por seguridad, te recomendamos cambiar el texto `ESTA_ES_UNA_CLAVE_SECRETA_CAMBIAME` por cualquier otra frase larga y aleatoria que se te ocurra. Guarda el archivo y reinicia el servidor backend (ciérralo con Ctrl+C y vuelve a ejecutar `npm start`).
+
+---
+
+### **5. Para Usuarios Avanzados: Despliegue en Producción**
+
+Para que esta aplicación esté disponible en internet (y no solo en tu computadora), necesitarás:
+
+1.  **Construir el frontend:** En la carpeta `frontend`, ejecuta `npm run build`. Esto creará una carpeta `dist` con los archivos estáticos de tu aplicación.
+2.  **Subir el backend y el frontend construido** a un servicio de hosting como Vercel, Heroku, Render, o un VPS (Virtual Private Server).
+
+Esta parte es un proceso más complejo y depende del proveedor de hosting que elijas.
